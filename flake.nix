@@ -7,7 +7,7 @@
         let
           pkgs = nixpkgs.legacyPackages.${system};
           check = pkgs.writeShellScriptBin "check" ''
-            tree-sitter generate && tree-sitter test
+            tree-sitter generate && tree-sitter test $@
           '';
         in
         {
